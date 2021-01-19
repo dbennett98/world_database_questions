@@ -1,0 +1,65 @@
+1) 
+SELECT COUNT(Name) FROM city;
+
+2)
+SELECT Population, LifeExpectancy FROM country
+WHERE Name = 'Argentina'
+
+3)
+SELECT LifeExpectancy
+FROM country ORDER BY LifeExpectancy DESC LIMIT 1;
+WHERE IS NOT NULL
+
+4)
+SELECT c.Name
+from city c
+JOIN country a ON c.CountryCode = a.Code
+WHERE a.name = "Spain" LIMIT 1;
+
+5)
+SELECT Language
+FROM country c 
+JOIN countrylanguage l ON c.code = l.CountryCode
+WHERE Region = "Southeast Asia";
+6)
+SELECT name 
+FROM country 
+WHERE name LIKE 'F%' LIMIT 25;
+7)
+SELECT Count(c.Name)
+from city c
+JOIN country a ON c.CountryCode = a.Code
+where a.name = "China";
+8)
+SELECT Population, Name
+FROM country 
+WHERE Population IS NOT NULL and Population > 0
+ORDER BY Population ASC
+LIMIT 1;
+9)
+SELECT COUNT(name) FROM country;
+10)
+ SELECT SurfaceArea, Name
+ FROM country
+ ORDER BY SurfaceArea DESC
+ Limit 10;
+11)
+SELECT c.population, c.name
+from city c
+JOIN country a ON c.countryCode = a.Code
+WHERE a.name = "Japan"
+LIMIT 5;
+12)
+UPDATE country
+SET HeadOfState = "Elizabeth II"
+WHERE HeadOFState = "Elisabeth II";
+Select HeadOfState, Name
+FROM country
+WHERE HeadOfState = "Elizabeth II";
+13)
+SELECT population/SurfaceArea, name AS "Population-to-area ratio" 
+FROM country
+WHERE population/SurfaceArea > 0
+ORDER BY population/SurfaceArea ASC
+LIMIT 10 ;
+
